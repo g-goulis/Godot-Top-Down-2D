@@ -21,12 +21,12 @@ position = Vector2(64, 4)
 rotation = -1.5708
 scale = Vector2(0.604717, 1.02275)
 shadow_enabled = true
+shadow_filter_smooth = 4.0
 texture = ExtResource("6_d0m14")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(1.6, 1.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, 0.624982)
-scale = Vector2(0.0615234, 0.0639649)
+scale = Vector2(0.065, 0.067)
 texture = ExtResource("3_212nh")

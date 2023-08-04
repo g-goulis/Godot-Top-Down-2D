@@ -3,7 +3,8 @@ using System;
 
 public partial class CharacterBody2D : Godot.CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	private const float Speed = 300.0f;
+	
 	// public const float JumpVelocity = -400.0f;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,6 +15,7 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 
 
 	public override void _Ready(){
+
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -36,4 +38,24 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+
+	// Initial gun functionality
+	public override void _Input(InputEvent @event)
+	{
+        if (@event is InputEventMouseButton eventMouseButton)
+		{
+			if(eventMouseButton.Pressed && eventMouseButton.ButtonIndex.Equals(MouseButton.Left))
+			{
+
+				string path = "res://Bullet.tscn";
+				PackedScene scene = ResourceLoader.Load<PackedScene>(path) as PackedScene;
+				Node2D s = scene.Instantiate() as Node2D;
+				s.Position = Position;
+				GetParent().CallDeferred("add_child", s);
+			}
+
+        }
+    }
+	
 }
