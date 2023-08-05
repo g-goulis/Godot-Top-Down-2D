@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqokfpduo4lc7"]
+
+[ext_resource type="Script" path="res://Bullet/Bullet.cs" id="1_p8j00"]
+[ext_resource type="Texture2D" uid="uid://cjgp6m2klb672" path="res://Assets/Player/yORsT1-circle-picture.png" id="1_q3wdf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2du7y"]
+radius = 2.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bullet" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("1_p8j00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("CircleShape2D_2du7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet"]
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("1_q3wdf")
+
+[connection signal="body_entered" from="Bullet" to="Bullet" method="_on_body_entered"]

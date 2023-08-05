@@ -1,22 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwpke11g8vkp1"]
+[gd_scene load_steps=6 format=3 uid="uid://cwpke11g8vkp1"]
 
 [ext_resource type="Script" path="res://Player/CharacterBody2D.cs" id="1_i6vxe"]
 [ext_resource type="Texture2D" uid="uid://cbodsktehaely" path="res://Assets/Player/Player.png" id="3_212nh"]
+[ext_resource type="Texture2D" uid="uid://cjgp6m2klb672" path="res://Assets/Player/yORsT1-circle-picture.png" id="4_hrp5n"]
 [ext_resource type="Texture2D" uid="uid://cybjk3q5yafuj" path="res://Assets/Player/LightTextureFinal.png" id="6_d0m14"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ujh15"]
 
-[node name="Player" type="Node2D"]
-position = Vector2(578, 327)
+[node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_i6vxe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ujh15")
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
 position = Vector2(64, 4)
 rotation = -1.5708
 scale = Vector2(0.604717, 1.02275)
@@ -24,9 +24,17 @@ shadow_enabled = true
 shadow_filter_smooth = 4.0
 texture = ExtResource("6_d0m14")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.6, 1.6)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 scale = Vector2(0.065, 0.067)
 texture = ExtResource("3_212nh")
+
+[node name="BulletSpawn" type="Node2D" parent="Player"]
+position = Vector2(20, 0)
+rotation = 1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/BulletSpawn"]
+scale = Vector2(0.001, 0.001)
+texture = ExtResource("4_hrp5n")

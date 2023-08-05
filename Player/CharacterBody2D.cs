@@ -48,11 +48,17 @@ public partial class CharacterBody2D : Godot.CharacterBody2D
 			if(eventMouseButton.Pressed && eventMouseButton.ButtonIndex.Equals(MouseButton.Left))
 			{
 
-				string path = "res://Bullet.tscn";
+				string path = "res://Bullet/Bullet.tscn";
 				PackedScene scene = ResourceLoader.Load<PackedScene>(path) as PackedScene;
-				Node2D s = scene.Instantiate() as Node2D;
-				s.Position = Position;
-				GetParent().CallDeferred("add_child", s);
+				Node2D bulletScene = scene.Instantiate() as Node2D;
+				Bullet bullet = (Bullet) bulletScene.GetNode("Bullet");
+				Node2D bulletSpawn = (Node2D) GetNode("BulletSpawn");
+				
+				bullet.Instantiate(GetGlobalMousePosition(), bulletSpawn.GlobalPosition);
+
+				GetParent().GetParent().CallDeferred("add_child", bulletScene);
+
+			
 			}
 
         }
