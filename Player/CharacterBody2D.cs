@@ -3,6 +3,7 @@ using System;
 
 public partial class CharacterBody2D : Godot.CharacterBody2D
 {
+	[Export]
 	private const float Speed = 300.0f;
 	
 	// public const float JumpVelocity = -400.0f;

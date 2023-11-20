@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://c2smybuix6egt"]
 
-[ext_resource type="Texture2D" uid="uid://u42hvkqhyhk8" path="res://Assets/World/Dungeon_Tileset.png" id="1_4e137"]
+[ext_resource type="Texture2D" uid="uid://u42hvkqhyhk8" path="res://Assets/World/Dungeon_Tileset.png" id="1_qubwa"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_3rmdw"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608, 0, 3, 262144, 0, 4, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 3, 262145, 65536, 4, 2, 131072, 0, 65538, 131072, 1, 131074, 131072, 2, 196610, 131072, 3, 262146, 131072, 4, 3, 196608, 0, 65539, 196608, 1, 131075, 196608, 2, 196611, 196608, 3, 262147, 196608, 4, 4, 262144, 0, 65540, 262144, 1, 131076, 262144, 2, 196612, 262144, 3, 262148, 262144, 4, 5, 327680, 0, 65541, 327680, 1, 131077, 327680, 2, 196613, 327680, 3, 262149, 327680, 4)
@@ -40,7 +40,7 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3pu6p"]
 resource_name = "Dungeon Tiles"
-texture = ExtResource("1_4e137")
+texture = ExtResource("1_qubwa")
 use_texture_padding = false
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_6py6p")
