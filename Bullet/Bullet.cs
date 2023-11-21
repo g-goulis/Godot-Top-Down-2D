@@ -7,6 +7,7 @@ public partial class Bullet : RigidBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+	
 		MaxContactsReported = 3;
 	}
 
@@ -26,7 +27,7 @@ public partial class Bullet : RigidBody2D
 		Vector2 velocity = mousePosition;
 		velocity -= spawnPosition;
 
-		GD.Print("Calculating Velocity " + spawnPosition + " -= " + mousePosition + " = " + velocity.Normalized());
+		// GD.Print("Calculating Velocity " + spawnPosition + " -= " + mousePosition + " = " + velocity.Normalized());
 		velocity = velocity.Normalized();
 		velocity.X *= BULLET_SPEED;
 		velocity.Y *= BULLET_SPEED;

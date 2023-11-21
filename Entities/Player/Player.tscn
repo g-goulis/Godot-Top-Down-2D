@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwpke11g8vkp1"]
 
-[ext_resource type="Script" path="res://Player/CharacterBody2D.cs" id="1_i6vxe"]
+[ext_resource type="Script" path="res://Entities/Player/Player.cs" id="1_r8vas"]
 [ext_resource type="Texture2D" uid="uid://cbodsktehaely" path="res://Assets/Player/Player.png" id="3_212nh"]
 [ext_resource type="Texture2D" uid="uid://cjgp6m2klb672" path="res://Assets/Player/yORsT1-circle-picture.png" id="4_hrp5n"]
 [ext_resource type="Texture2D" uid="uid://cybjk3q5yafuj" path="res://Assets/Player/LightTextureFinal.png" id="6_d0m14"]
@@ -10,7 +10,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_i6vxe")
+script = ExtResource("1_r8vas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 rotation = 1.5708
